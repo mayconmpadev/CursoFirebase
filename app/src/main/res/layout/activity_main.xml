@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            >
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_Main_DowloadImagem"
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="1dp"
+                app:cardUseCompatPadding="true"
+                android:foreground="?attr/selectableItemBackground"
+
+                >
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Download Imagem"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_Main_UploadImagem"
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="1dp"
+                android:foreground="?attr/selectableItemBackground"
+
+                app:cardUseCompatPadding="true">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Upload Imagem"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_Main_LerDados"
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="1dp"
+                android:foreground="?attr/selectableItemBackground"
+
+                app:cardUseCompatPadding="true">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Firestore - Ler Dados"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_Main_GravarAlterarRemoverDados"
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="1dp"
+                android:foreground="?attr/selectableItemBackground"
+
+                app:cardUseCompatPadding="true">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Firestore - Gravar Alterar Remover Dados"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_Main_Categorias"
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="1dp"
+                android:foreground="?attr/selectableItemBackground"
+
+                app:cardUseCompatPadding="true">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Categorias"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_Main_Deslogar"
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="1dp"
+                android:foreground="?attr/selectableItemBackground"
+
+                app:cardUseCompatPadding="true">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Deslogar"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
