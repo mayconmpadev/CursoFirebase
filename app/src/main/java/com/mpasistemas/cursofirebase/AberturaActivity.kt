@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.br.jafapps.bdfirestore.util.DialogProgress
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
@@ -71,12 +72,6 @@ private val binding by lazy {
     }
 
 
-
-
-
-
-
-
     fun buttonLogin(){
 
         val email = binding.editTextLoginEmail.text.toString()
@@ -124,29 +119,46 @@ private val binding by lazy {
                 val intent =  Intent(this,MainActivity::class.java)
                 startActivity(intent)
             }else{
-
-
-                val erro = task.exception.toString()
-                errosFirebase(erro)
+                val exception = task.exception
+                if (exception is FirebaseAuthException) {
+                    when (exception.errorCode) {
+                        "ERROR_INVALID_EMAIL" -> {
+                            Toast.makeText(baseContext, "Email inválido.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                        "ERROR_WRONG_PASSWORD" -> {
+                            Toast.makeText(baseContext, "Senha incorreta.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                        "ERROR_USER_NOT_FOUND" -> {
+                            Toast.makeText(baseContext, "Usuário não encontrado.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                        "ERROR_USER_DISABLED" -> {
+                            Toast.makeText(baseContext, "Conta desativada.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                        "ERROR_TOO_MANY_REQUESTS" -> {
+                            Toast.makeText(baseContext, "Muitas tentativas de login. Tente novamente mais tarde.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                        "ERROR_OPERATION_NOT_ALLOWED" -> {
+                            Toast.makeText(baseContext, "Operação não permitida.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                        else -> {
+                            Toast.makeText(baseContext, "Erro desconhecido: ${exception.localizedMessage}",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+                    Toast.makeText(baseContext, "Erro de autenticação.",
+                        Toast.LENGTH_SHORT).show()
+                }
             }
 
         }
-            ?.addOnFailureListener{ e ->
 
-
-                val errorCode = (e as FirebaseAuthException).errorCode
-
-
-
-                when(errorCode){
-
-
-                    "ERROR_INVALID_EMAIL" ->{
-                        Log.d("wwer","Email invalido")
-                    }
-                }
-
-            }
 
 
 
